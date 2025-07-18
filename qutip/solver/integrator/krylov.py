@@ -2,7 +2,7 @@ from ..integrator import IntegratorException, Integrator
 import numpy as np
 from qutip.core import data as _data
 from scipy.optimize import root_scalar
-from ..sesolve import SESolver
+from ..solver_base import Solver
 
 
 __all__ = ["IntegratorKrylov"]
@@ -303,4 +303,4 @@ class IntegratorKrylov(Integrator):
         Integrator.options.fset(self, new_options)
 
 
-SESolver.add_integrator(IntegratorKrylov, 'krylov')
+Solver.add_integrator(IntegratorKrylov, 'krylov')
